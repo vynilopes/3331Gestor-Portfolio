@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor49 | O Sistema Dourado</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+        :root { 
+            --dakila-gold: #D4AF37; 
+            --dakila-black: #050505; 
+            --dakila-glass: rgba(20, 20, 20, 0.6);
+        }
+        
+        body { 
+            background-color: var(--dakila-black); 
+            color: #e0e0e0; 
+            font-family: 'Outfit', sans-serif; 
+            overflow-x: hidden;
+        }
+
+        /* --- Tipografia e Cores --- */
+        .text-gold { color: var(--dakila-gold) !important; }
+        .bg-gold { background-color: var(--dakila-gold) !important; color: black; }
+        .border-gold { border-color: var(--dakila-gold) !important; }
+        
+        /* Gradiente no Texto */
+        .text-gradient-gold {
+            background: linear-gradient(45deg, #b3922d, #D4AF37, #f9f295, #D4AF37);
+            background-size: 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 5s infinite alternate;
+        }
+
+        @keyframes shine {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        /* --- Glassmorphism Cards --- */
+        .glass-card { 
+            background-color: var(--dakila-glass); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        /* --- Botões --- */
+        .btn-gold {
+            background: linear-gradient(45deg, #b3922d, #D4AF37); 
+            border: none; color: #000; font-weight: 800;
+            padding: 12px 30px; border-radius: 50px;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s;
+        }
+        .btn-gold:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+            color: #000;
+        }
+
+        /* --- Elementos de Fundo (Glow) --- */
+        .glow-spot {
+            position: absolute;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* --- Mockup das Imagens --- */
+        .screenshot-container {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        .screenshot-container img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s;
+        }
+        .screenshot-container:hover img {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-spot" style="top: -100px; left: -100px;"></div>
+    <div class="glow-spot" style="bottom: 0; right: 0; width: 600px; height: 600px; opacity: 0.5;"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: rgba(5,5,5,0.8); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
+                <i class="fas fa-pyramid text-gold"></i>
+                <span class="ls-1">GESTOR<span class="text-gold">49</span></span>
+            </a>
+            <div class="d-flex">
+                <a href="https://github.com/vynilopes" target="_blank" class="btn btn-sm btn-outline-light rounded-pill px-3">
+                    <i class="fab fa-github me-2"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="d-flex align-items-center justify-content-center text-center" style="min-height: 90vh; padding-top: 80px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <span class="badge border border-gold text-gold rounded-pill px-3 py-2 mb-4 animate__animated animate__fadeInDown">v1.0.2 Stable Release</span>
+                    
+                    <h1 class="display-2 fw-black mb-4 animate__animated animate__fadeInUp" style="font-weight: 900; letter-spacing: -2px;">
+                        Gestão Financeira <br>
+                        <span class="text-gradient-gold">Soberana & Offline</span>
+                    </h1>
+                    
+                    <p class="lead text-white-50 mb-5 mx-auto animate__animated animate__fadeInUp" style="max-width: 700px; animation-delay: 0.2s;">
+                        O <strong>Gestor49</strong> não é apenas uma planilha. É um ecossistema desenvolvido em Python para aplicar a metodologia <strong>3331</strong> e gerenciar ativos digitais (BDM) com privacidade total.
+                    </p>
+
+                    <div class="d-flex gap-3 justify-content-center mb-5 animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                        <a href="#features" class="btn btn-gold btn-lg">Conhecer o Sistema</a>
+                        <a href="#tech" class="btn btn-outline-light btn-lg rounded-pill px-4">Tecnologia</a>
+                    </div>
+
+                    <div class="screenshot-container animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+                        <img src="https://placehold.co/1200x600/111/D4AF37?text=Dashboard+do+Gestor49+-+O+Oraculo" alt="Dashboard Gestor49">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-5 my-5">
+        <div class="container">
+            <div class="row g-4">
+                
+                <div class="col-md-4">
+                    <div class="glass-card p-4 h-100">
+                        <div class="mb-3 text-gold"><i class="fas fa-chart-area fa-3x"></i></div>
+                        <h4 class="text-white fw-bold">O Oráculo</h4>
+                        <p class="text-white-50 small">Um painel de inteligência que cruza seus dados históricos para projetar a evolução do seu patrimônio em BDM Digital vs. Inflação pessoal.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="glass-card p-4 h-100 border-gold" style="box-shadow: 0 0 20px rgba(212,175,55,0.1);">
+                        <div class="mb-3 text-gold"><i class="fas fa-chart-pie fa-3x"></i></div>
+                        <h4 class="text-white fw-bold">Método 3331</h4>
+                        <p class="text-white-50 small">O sistema aplica automaticamente a regra de divisão: 30% Essencial, 30% Qualidade, 30% Investimento e 10% Reserva.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="glass-card p-4 h-100">
+                        <div class="mb-3 text-gold"><i class="fas fa-robot fa-3x"></i></div>
+                        <h4 class="text-white fw-bold">Motor de Recorrência</h4>
+                        <p class="text-white-50 small">Automação inteligente que "aprende" seus gastos fixos e gera as contas do mês seguinte automaticamente.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="glass-card p-4 h-100">
+                        <div class="mb-3 text-gold"><i class="fas fa-bullseye fa-3x"></i></div>
+                        <h4 class="text-white fw-bold">Smart Goals</h4>
+                        <p class="text-white-50 small">Cálculo automático de estratégias de investimento (Crescente, Decrescente ou Constante) para atingir suas metas.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="glass-card p-4 h-100">
+                        <div class="mb-3 text-gold"><i class="fas fa-file-pdf fa-3x"></i></div>
+                        <h4 class="text-white fw-bold">Relatórios PDF</h4>
+                        <p class="text-white-50 small">Geração instantânea de extratos e fechamentos mensais profissionais prontos para impressão ou arquivamento.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="glass-card p-4 h-100">
+                        <div class="mb-3 text-gold"><i class="fas fa-user-shield fa-3x"></i></div>
+                        <h4 class="text-white fw-bold">Offline-First</h4>
+                        <p class="text-white-50 small">Seus dados financeiros nunca saem da sua máquina. Banco de dados SQLite criptografado e modo privacidade nativo.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-black bg-opacity-50">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="fw-bold mb-3">Interface <span class="text-gold">Premium</span></h2>
+                    <p class="text-white-50 mb-4">
+                        Desenvolvido com o conceito de <em>Glassmorphism</em>, o Gestor49 oferece uma experiência visual limpa, moderna e focada nos dados que importam.
+                    </p>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="mb-2"><i class="fas fa-check text-gold me-2"></i> Modo Escuro Nativo</li>
+                        <li class="mb-2"><i class="fas fa-check text-gold me-2"></i> 100% Responsivo (Mobile/Desktop)</li>
+                        <li class="mb-2"><i class="fas fa-check text-gold me-2"></i> UX Otimizada com Tour Guiado</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="screenshot-container">
+                        <img src="https://placehold.co/800x500/222/D4AF37?text=Interface+Mobile+e+Extrato" alt="Mobile Interface">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech" class="py-5 my-5 text-center">
+        <div class="container">
+            <p class="text-uppercase text-gold ls-2 small fw-bold mb-4">Powered By</p>
+            <div class="d-flex justify-content-center gap-4 flex-wrap opacity-75">
+                <div class="d-flex align-items-center gap-2 border border-secondary px-3 py-2 rounded-pill">
+                    <i class="fab fa-python fa-lg text-white"></i> <span class="text-white">Python 3.12</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 border border-secondary px-3 py-2 rounded-pill">
+                    <i class="fas fa-layer-group fa-lg text-success"></i> <span class="text-white">Django 6.0</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 border border-secondary px-3 py-2 rounded-pill">
+                    <i class="fab fa-bootstrap fa-lg text-primary"></i> <span class="text-white">Bootstrap 5</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 border border-secondary px-3 py-2 rounded-pill">
+                    <i class="fas fa-database fa-lg text-info"></i> <span class="text-white">SQLite3</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 border border-secondary px-3 py-2 rounded-pill">
+                    <i class="fas fa-chart-line fa-lg text-warning"></i> <span class="text-white">Chart.js</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center border-top border-secondary border-opacity-25 mt-5">
+        <div class="container">
+            <p class="mb-0 text-white-50 small">Gestor49 &copy; 2026. Desenvolvido por <span class="text-gold fw-bold">Vynicius Lopes</span>.</p>
+            <small class="text-muted opacity-50">Dakila Ecosystem Research</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
